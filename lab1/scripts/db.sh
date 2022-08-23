@@ -56,6 +56,26 @@ handleRestoreCommand() {
   fi
 }
 
+handleFindCommand() {
+  read -p "Enter name to find: " username 
+
+  result=$(cat $dataFilePath | grep $username)
+  echo $result 
+}
+
+inverseParam="$2"
+handleListCommand() {
+  if [[ $inverseParam == "invers" ]]
+    then
+      cat -n $dataFilePath | tac
+  fi 
+
+  if [[ $inverseParam == '' ]]
+    then
+      cat -n $dataFilePath
+  fi
+}
+
 createArgumentHandler() {
   if [[ $commandArg == $1 ]]
     then
@@ -63,7 +83,12 @@ createArgumentHandler() {
   fi 
 }
 
+
 createArgumentHandler "backup" handleBackupCommand
 createArgumentHandler "add" handleAddCommand 
 createArgumentHandler "restore" handleRestoreCommand 
+createArgumentHandler "find" handleFindCommand
+createArgumentHandler "list" handleListCommand 
+
+
 
