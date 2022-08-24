@@ -1,0 +1,25 @@
+{
+  "name": "Source",
+  "actionTypeId": {
+    "category": "Source",
+    "owner": "ThirdParty",
+    "provider": "GitHub",
+    "version": "1"
+  },
+  "runOrder": 1,
+  "configuration": {
+    "Branch": 1,
+    "OAuthToken": "****",
+    "Owner": "{{GitHub Owner}}",
+    "PollForSourceChanges": "{{PollForSourceChanges}}",
+    "Repo": "shop-angular-cloudfront"
+  },
+  "outputArtifacts": [
+    {
+      "name": "SourceArtifact"
+    }
+  ],
+  "inputArtifacts": [],
+  "region": "us-east-1",
+  "namespace": "SourceVariables"
+}
